@@ -1,0 +1,82 @@
+.main__container {
+    display: flex;
+    justify-content: center;
+
+    padding: 1rem;
+}
+
+.img-background__container {
+    display: none;
+}
+
+.company__section {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.select__container {
+    display: flex;
+}
+
+.select__container>select {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 150%;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+
+    padding: 1rem;
+
+    color: var(--color-white);
+    border: 1px solid var(--color-brand-1);
+    background: url(../img/arrow-icon.png) no-repeat 97% var(--color-brand-1);
+
+    cursor: pointer;
+}
+
+.company__list {
+    display: flex;
+    gap: 1rem;
+}
+
+.company__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-brand-1)
+}
+
+.company__card>h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 150%;
+
+    color: var(--color-black);
+}
+
+.company__card>p {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 150%;
+
+    color: var(--color-black);
+}
+
+.company__card>span {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    text-align: center;
+
+    width: fit-content;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+
+    color: var(--color-brand-1);
+    border: 1px solid var(--color-brand-1);
+    border-radius: 255px;
+}
