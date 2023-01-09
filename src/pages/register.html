@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/register.css" />
+
+    <script src="../scripts/header.js" defer></script>
+    <script src="./src/scripts/header.js" defer></script>
     <title>Register</title>
-</head>
-<body>
-    <h1>register page</h1>
-</body>
+  </head>
+  <body>
+    <header class="header__container">
+      <section class="header-title__container">
+        <div>
+          <img src="../img/elipse-icon.png" alt="elipse" />
+          <h2>Kenzie Empresas</h2>
+        </div>
+        <img
+          class="header-button--menu"
+          src="../img/dropdown-icon.png"
+          alt="traços"
+        />
+      </section>
+
+      <section class="header-buttons__container menu--dropdown">
+        <button class="header-button--login">Login</button>
+        <button class="header-button--register">Cadastro</button>
+      </section>
+    </header>
+    <main class="main__container">
+      <section class="register__section">
+        <h2>Cadastre-se</h2>
+        <input type="text" name="name" placeholder="Seu nome" />
+        <input type="email" name="email" placeholder="Seu e-mail" />
+        <input type="password" name="password" placeholder="Sua senha" />
+        <select name="professionalLevel" id="professionalLevel">
+          <option value="">Nível Profissional</option>
+          <option value="estágio">Estágio</option>
+          <option value="júnior">Júnior</option>
+          <option value="sênior">Sênior</option>
+        </select>
+        <button class="register-button--register">Cadastre-se</button>
+        <button class="register-button--return">Retornar</button>
+      </section>
+    </main>
+  </body>
 </html>

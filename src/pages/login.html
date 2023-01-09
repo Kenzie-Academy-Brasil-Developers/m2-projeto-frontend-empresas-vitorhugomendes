@@ -4,9 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+      defer
+    ></script>
+
+    <script src="../scripts/header.js" defer></script>
+    <script src="../scripts/login.js" defer></script>
+
     <title>login</title>
   </head>
   <body>
-    <h1>login page</h1>
+    <header class="header__container">
+      <section class="header-title__container">
+        <div>
+          <img src="../img/elipse-icon.png" alt="elipse" />
+          <h2>Kenzie Empresas</h2>
+        </div>
+        <img
+          class="header-button--menu"
+          src="../img/dropdown-icon.png"
+          alt="traços"
+        />
+      </section>
+
+      <section class="header-buttons__container menu--dropdown">
+        <button class="header-button--home">Home</button>
+        <button class="header-button--register">Cadastro</button>
+      </section>
+    </header>
+    <main class="main__container">
+      <section class="login__section">
+        <h2>Login</h2>
+        <h3>Preencha os campos para realizar login</h3>
+        <input type="email" name="email" placeholder="Seu e-mail" />
+        <input type="password" name="password" placeholder="Sua senha" />
+        <button class="login-button--login">Login</button>
+        <p>ou</p>
+        <button class="login-button--register">Cadastre-se</button>
+      </section>
+    </main>
   </body>
 </html>

@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 :root {
     --color-brand-1: #4200FF;
     --color-black: #000000;
@@ -16,6 +18,10 @@ body {
 
     width: 100%;
     max-width: 1440px;
+}
+
+select, button{
+    cursor: pointer;
 }
 
 .hidden {

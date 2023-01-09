@@ -19,6 +19,10 @@ function pageRedirectButtons() {
       button.addEventListener("click", () => {
         window.location.replace("/src/pages/register.html");
       });
+    } else if (button.innerText == "Home") {
+      button.addEventListener("click", () => {
+        window.location.replace("/");
+      });
     }
   });
 }

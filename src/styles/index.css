@@ -1,7 +1,7 @@
 .main__container {
     display: flex;
     justify-content: center;
-    
+
     padding: 1rem;
     background: #F8F8F8;
 }
@@ -23,19 +23,20 @@
 }
 
 .select__container>select {
+    appearance: none;
+
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 150%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
 
     padding: 1rem;
+    width: 100%;
 
     color: var(--color-white);
     border: 1px solid var(--color-brand-1);
     background: url(../img/arrow-icon.png) no-repeat 97% var(--color-brand-1);
-
-    cursor: pointer;
 }
 
 .company__list {
