@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../styles/register.css" />
 
     <script src="../scripts/header.js" defer></script>
-    <script src="./src/scripts/header.js" defer></script>
+    <script src="../scripts/register.js" defer></script>
     <title>Register</title>
   </head>
   <body>
@@ -36,17 +36,19 @@
     <main class="main__container">
       <section class="register__section">
         <h2>Cadastre-se</h2>
-        <input type="text" name="name" placeholder="Seu nome" />
-        <input type="email" name="email" placeholder="Seu e-mail" />
-        <input type="password" name="password" placeholder="Sua senha" />
-        <select name="professionalLevel" id="professionalLevel">
-          <option value="">Nível Profissional</option>
-          <option value="estágio">Estágio</option>
-          <option value="júnior">Júnior</option>
-          <option value="sênior">Sênior</option>
-        </select>
-        <button class="register-button--register">Cadastre-se</button>
-        <button class="register-button--return">Retornar</button>
+        <form class="register__form">
+          <input type="text" name="name" placeholder="Seu nome" />
+          <input type="email" name="email" placeholder="Seu e-mail" />
+          <input type="password" name="password" placeholder="Sua senha" />
+          <select name="professionalLevel" id="professionalLevel">
+            <option value="">Nível Profissional</option>
+            <option value="estágio">Estágio</option>
+            <option value="júnior">Júnior</option>
+            <option value="sênior">Sênior</option>
+          </select>
+          <button class="register-button--register">Cadastre-se</button>
+          <button class="register-button--return">Retornar</button>
+        </form>
       </section>
     </main>
   </body>

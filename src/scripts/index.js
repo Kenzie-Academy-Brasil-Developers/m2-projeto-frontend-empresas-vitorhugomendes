@@ -2,6 +2,8 @@ import {
   readAllCompanies,
   readAllCompaniesSectors,
   readCompaniesBySector,
+  getUser,
+  checkUserAdm,
 } from "./requests.js";
 
 function renderCompaniesList(companies) {
@@ -52,6 +54,16 @@ function renderSelectedCompanys() {
   });
 }
 
+async function renderLogin() {
+  const user = getUser();
+  if (user && (await checkUserAdm())) {
+    window.location.replace("/src/pages/admDashboard.html");
+  } else if (user && !(await checkUserAdm())) {
+    window.location.replace("/src/pages/userDashboard.html");
+  }
+}
+
 renderCompaniesList(await readAllCompanies());
 renderSelectOptions(await readAllCompaniesSectors());
 renderSelectedCompanys();
+renderLogin();

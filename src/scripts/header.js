@@ -8,7 +8,9 @@ function showHideButtons() {
 }
 
 function pageRedirectButtons() {
-  const buttons = document.querySelectorAll("button");
+  const buttons = document.querySelectorAll(
+    ".header-buttons__container > button"
+  );
 
   buttons.forEach((button) => {
     if (button.innerText == "Login") {
@@ -21,6 +23,11 @@ function pageRedirectButtons() {
       });
     } else if (button.innerText == "Home") {
       button.addEventListener("click", () => {
+        window.location.replace("/");
+      });
+    } else if (button.innerText == "Logout") {
+      button.addEventListener("click", () => {
+        localStorage.setItem("@kenzieEmpresas:user", null);
         window.location.replace("/");
       });
     }
