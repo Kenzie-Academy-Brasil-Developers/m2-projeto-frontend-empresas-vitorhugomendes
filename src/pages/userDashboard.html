@@ -43,6 +43,30 @@
         <button class="header-button--home">Logout</button>
       </section>
     </header>
-    <h1>user</h1>
+    <main class="main__container">
+      <section class="user-info__section">
+        <div class="user-info__container"></div>
+        <img
+          class="user-button--edit"
+          src="../img/pen-icon-purple.png"
+          alt="caneta"
+        />
+      </section>
+
+      <section class="company-info__section">
+        <h2>Você ainda não foi contratado</h2>
+      </section>
+    </main>
+
+    <dialog class="user-edit-info__modal">
+      <img class="button-modal--close"src="../img/x-icon.png" alt="">
+      <form method="dialog">
+        <h2>Editar Perfil</h2>
+        <input type="text" name="username" placeholder="Seu nome" />
+        <input type="email" name="email" placeholder="Seu e-mail" />
+        <input type="password" name="password" placeholder="Sua senha" />
+        <button>Editar Perfil</button>
+      </form>
+    </dialog>
   </body>
 </html>

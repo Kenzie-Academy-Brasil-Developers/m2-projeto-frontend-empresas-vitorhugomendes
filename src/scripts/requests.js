@@ -103,3 +103,26 @@ export async function register(data) {
 
   return registerData;
 }
+
+export async function userInformations() {
+  const userInformations = await fetch(`${baseUrl}/users/profile`, {
+    method: "GET",
+    headers: requestHeaders,
+  }).then((response) => {
+    return response.json();
+  });
+
+  return userInformations;
+}
+
+export async function userUpdateUserInformation(data) {
+  const newUserInformation = await fetch(`${baseUrl}/users`, {
+    method: "PATCH",
+    headers: requestHeaders,
+    body: JSON.stringify(data),
+  }).then((response) => {
+    return response.json();
+  });
+
+  return newUserInformation;
+}
