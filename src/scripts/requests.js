@@ -62,7 +62,9 @@ export async function login(data) {
     toast(loginData.error, red);
   } else {
     toast("Login realizado com sucesso!", green);
-    window.location.replace("./admDashboard.html");
+    setTimeout(() => {
+      window.location.replace("./admDashboard.html");
+    }, 1000);
   }
 
   return loginData;
@@ -76,4 +78,28 @@ export async function checkUserAdm() {
     return response.json();
   });
   return checkUser.is_admin;
+}
+
+export async function register(data) {
+  const registerData = await fetch(`${baseUrl}/auth/register`, {
+    method: "POST",
+    headers: requestHeaders,
+    body: JSON.stringify(data),
+  }).then((response) => {
+    return response.json();
+  });
+
+  if (registerData.error) {
+    toast(registerData.error, red);
+  } else {
+    toast(
+      "Cadastro realizado com sucesso! Redirecionando para a página de login",
+      green
+    );
+    setTimeout(() => {
+      window.location.replace("./login.html");
+    }, 2000);
+  }
+
+  return registerData;
 }

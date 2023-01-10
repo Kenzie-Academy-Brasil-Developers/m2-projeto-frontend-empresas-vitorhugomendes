@@ -27,7 +27,7 @@ function pageRedirectButtons() {
       });
     } else if (button.innerText == "Logout") {
       button.addEventListener("click", () => {
-        localStorage.setItem("@kenzieEmpresas:user", null);
+        localStorage.removeItem("@kenzieEmpresas:user");
         window.location.replace("/");
       });
     }

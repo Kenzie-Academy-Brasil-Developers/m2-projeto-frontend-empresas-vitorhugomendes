@@ -44,16 +44,14 @@ select {
     padding: 0.5rem;
     font-weight: 400;
     font-size: 1rem;
-    list-style: 150%;
 
-
-    color: rgba(0, 0, 0, 0.5);
     background: var(--color-white);
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-option {
-    color: var(--color-black);
+.register__form>input::placeholder,
+option[value=""] {
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .register__form>button {

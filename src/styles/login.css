@@ -51,12 +51,13 @@
     padding: 0.5rem;
     font-weight: 400;
     font-size: 1rem;
-    list-style: 150%;
 
-
-    color: rgba(0, 0, 0, 0.5);
     background: var(--color-white);
     border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.login__form>input::placeholder{
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .login__form > button {

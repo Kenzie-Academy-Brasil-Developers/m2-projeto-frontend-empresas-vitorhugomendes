@@ -9,9 +9,19 @@
     <link rel="stylesheet" href="../styles/globalStyles.css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/register.css" />
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+  />
 
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+    defer
+  ></script>
     <script src="../scripts/header.js" defer></script>
-    <script src="../scripts/register.js" defer></script>
+    <script type="module" src="../scripts/register.js" defer></script>
     <title>Register</title>
   </head>
   <body>
@@ -29,18 +39,23 @@
       </section>
 
       <section class="header-buttons__container menu--dropdown">
+        <button class="header-button--home">Home</button>
         <button class="header-button--login">Login</button>
-        <button class="header-button--register">Cadastro</button>
       </section>
     </header>
     <main class="main__container">
       <section class="register__section">
         <h2>Cadastre-se</h2>
         <form class="register__form">
-          <input type="text" name="name" placeholder="Seu nome" />
-          <input type="email" name="email" placeholder="Seu e-mail" />
-          <input type="password" name="password" placeholder="Sua senha" />
-          <select name="professionalLevel" id="professionalLevel">
+          <input type="text" name="username" placeholder="Seu nome" required />
+          <input type="email" name="email" placeholder="Seu e-mail" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Sua senha"
+            required
+          />
+          <select name="professional_level" id="professionalLevel">
             <option value="">Nível Profissional</option>
             <option value="estágio">Estágio</option>
             <option value="júnior">Júnior</option>
