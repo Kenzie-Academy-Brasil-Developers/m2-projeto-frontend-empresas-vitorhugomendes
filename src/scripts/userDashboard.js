@@ -54,12 +54,10 @@ async function userModal() {
 
   editButton.addEventListener("click", (e) => {
     e.preventDefault();
-    userEditModal.classList.remove("hidden");
     userEditModal.showModal();
   });
 
   closeModalButton.addEventListener("click", () => {
-    userEditModal.classList.add("hidden");
     userEditModal.close();
   });
 }

@@ -106,14 +106,28 @@
       </section>
     </main>
 
-    <dialog class="user__modal hidden">
-      <img class="button-modal--close" src="../img/x-icon.png" alt="" />
+    <dialog class="view-department__modal">
+      <img class="view-department-modal--close" src="../img/x-icon.png" alt="" />
       <form method="dialog">
-        <h2>Editar Perfil</h2>
-        <input type="text" name="username" placeholder="Seu nome" />
-        <input type="email" name="email" placeholder="Seu e-mail" />
-        <input type="password" name="password" placeholder="Sua senha" />
-        <button class="button-modal--edit">Editar Perfil</button>
+        <h2>nome do departamento</h2>
+        <div>
+          <h3>descrição do departamento</h3>
+          <p>Empresa pertencente</p>
+        </div>
+        <div>
+          <select name="worker" id="worker"></select>
+          <button class="button-modal--edit">Contratar</button>
+        </div>
+        <ul>
+          <li>
+            <h2>username</h2>
+            <h3>pleno</h3>
+            <p>empresa</p>
+            <div>
+              <button>Desligar</button>
+            </div>
+          </li>
+        </ul>
       </form>
     </dialog>
   </body>

@@ -6,6 +6,10 @@
     margin-top: 2rem;
 }
 
+img {
+    cursor: pointer;
+}
+
 .companys__section,
 .users__section {
     display: flex;
@@ -130,6 +134,4 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-
-    cursor: pointer;
 }

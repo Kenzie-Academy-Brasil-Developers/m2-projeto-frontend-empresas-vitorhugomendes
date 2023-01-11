@@ -50,15 +50,15 @@ function createDepartmentCard({ name, description, companies }) {
 
   buttonsDiv.classList = "departments-buttons__container";
 
-  buttonView.classList = "department-button__view";
+  buttonView.classList = "department-button--view";
   buttonView.src = "../img/eye-icon-purple.png";
   buttonView.alt = "Visualizar";
 
-  buttonEdit.classList = "department-button__edit";
+  buttonEdit.classList = "department-button--edit";
   buttonEdit.src = "../img/pen-icon.png";
   buttonEdit.alt = "editar";
 
-  buttonDelete.classList = "department-button__delete";
+  buttonDelete.classList = "department-button--delete";
   buttonDelete.src = "../img/trash-icon.png";
   buttonDelete.alt = "excluir";
 
@@ -105,11 +105,11 @@ function createUserCard({ username, professional_level }) {
 
   buttonsDiv.classList = "users-buttons__container";
 
-  buttonEdit.classList = "user-button__edit";
+  buttonEdit.classList = "user-button--edit";
   buttonEdit.src = "../img/pen-icon-purple.png";
   buttonEdit.alt = "editar";
 
-  buttonDelete.classList = "user-button__delete";
+  buttonDelete.classList = "user-button--delete";
   buttonDelete.src = "../img/trash-icon.png";
   buttonDelete.alt = "excluir";
 
@@ -143,9 +143,30 @@ function renderSelectedCompanys() {
   const select = document.querySelector("#company");
 
   select.addEventListener("change", async () => {
-    const companyDepartments = await readDepartmentByCompany(select.value)
+    const companyDepartments = await readDepartmentByCompany(select.value);
 
     renderDepartmentsList(companyDepartments);
+  });
+}
+
+function viewDepartmentModal() {
+  const viewDepartmentButtons = document.querySelectorAll(
+    ".department-button--view"
+  );
+  const viewDepartmentCloseButton = document.querySelector(
+    ".view-department-modal--close"
+  );
+  const viewDepartmentModal = document.querySelector(".view-department__modal");
+
+  viewDepartmentButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      viewDepartmentModal.showModal();
+    });
+
+    viewDepartmentCloseButton.addEventListener("click", () => {
+      viewDepartmentModal.close();
+    });
   });
 }
 
@@ -154,3 +175,5 @@ renderDepartmentsList(await readAllDepartments());
 renderUsersList(await readAllusers());
 renderSelectCompanyOptions(await readAllCompanies());
 renderSelectedCompanys();
+
+viewDepartmentModal();
