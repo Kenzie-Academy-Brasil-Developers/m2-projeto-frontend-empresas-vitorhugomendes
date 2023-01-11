@@ -47,7 +47,7 @@
       <section class="companys__section">
         <div class="companys__menu">
           <h2>Departamentos</h2>
-          <select name="companys" id="companys">
+          <select name="company" id="company">
             <option value="">Selecionar Empresa</option>
           </select>
 
@@ -105,5 +105,16 @@
         </ul>
       </section>
     </main>
+
+    <dialog class="user__modal hidden">
+      <img class="button-modal--close" src="../img/x-icon.png" alt="" />
+      <form method="dialog">
+        <h2>Editar Perfil</h2>
+        <input type="text" name="username" placeholder="Seu nome" />
+        <input type="email" name="email" placeholder="Seu e-mail" />
+        <input type="password" name="password" placeholder="Sua senha" />
+        <button class="button-modal--edit">Editar Perfil</button>
+      </form>
+    </dialog>
   </body>
 </html>

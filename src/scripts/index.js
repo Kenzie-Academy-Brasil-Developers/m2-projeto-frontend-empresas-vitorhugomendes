@@ -35,7 +35,7 @@ function createCompanyCard({ name, opening_hours, sectors }) {
   return companyCard;
 }
 
-function renderSelectOptions(sectors) {
+function renderSelectSectorOptions(sectors) {
   const select = document.querySelector("#sector");
 
   sectors.forEach((sector) => {
@@ -49,8 +49,10 @@ function renderSelectOptions(sectors) {
 function renderSelectedCompanys() {
   const select = document.querySelector("#sector");
 
-  select.addEventListener("change", async (e) => {
-    renderCompaniesList(await readCompaniesBySector(select.value));
+  select.addEventListener("change", async () => {
+    const companiesBySector = await readCompaniesBySector(select.value);
+
+    renderCompaniesList(companiesBySector);
   });
 }
 
@@ -64,6 +66,6 @@ async function renderLogin() {
 }
 
 renderCompaniesList(await readAllCompanies());
-renderSelectOptions(await readAllCompaniesSectors());
+renderSelectSectorOptions(await readAllCompaniesSectors());
 renderSelectedCompanys();
 renderLogin();

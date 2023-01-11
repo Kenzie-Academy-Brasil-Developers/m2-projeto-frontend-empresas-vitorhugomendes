@@ -10,6 +10,10 @@ const requestHeaders = {
 const red = "#CE4646";
 const green = "#4BA036";
 
+export function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 export async function readAllCompanies() {
   const companies = await fetch(`${baseUrl}/companies`, {
     method: "GET",
@@ -134,4 +138,40 @@ export async function userUpdateUserInformation(data) {
   }
 
   return newUserInformation;
+}
+
+export async function readAllDepartments() {
+  const departments = await fetch(`${baseUrl}/departments`, {
+    method: "GET",
+    headers: requestHeaders,
+  }).then((response) => {
+    return response.json();
+  });
+
+  return departments;
+}
+
+export async function readDepartmentByCompany(companyID) {
+  const departmentByCompany = await fetch(
+    `${baseUrl}/departments/${companyID}`,
+    {
+      method: "GET",
+      headers: requestHeaders,
+    }
+  ).then((response) => {
+    return response.json();
+  });
+
+  return departmentByCompany;
+}
+
+export async function readAllusers() {
+  const users = await fetch(`${baseUrl}/users`, {
+    method: "GET",
+    headers: requestHeaders,
+  }).then((response) => {
+    return response.json();
+  });
+
+  return users;
 }

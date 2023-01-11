@@ -1,13 +1,10 @@
 import {
+  capitalizeFirstLetter,
   getUser,
   checkUserAdm,
   userInformations,
   userUpdateUserInformation,
 } from "./requests.js";
-
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
 
 async function renderUserDashboard() {
   const user = getUser();

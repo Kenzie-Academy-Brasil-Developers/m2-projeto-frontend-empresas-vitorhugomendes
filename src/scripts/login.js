@@ -1,4 +1,11 @@
-import { login } from "./requests.js";
+import { getUser, login } from "./requests.js";
+
+function renderLogin() {
+  const user = getUser();
+  if (user) {
+    window.location.replace("/");
+  }
+}
 
 function loginForm() {
   const inputs = document.querySelectorAll(".login__form >  input");
@@ -19,4 +26,5 @@ function loginForm() {
   });
 }
 
+renderLogin()
 loginForm();

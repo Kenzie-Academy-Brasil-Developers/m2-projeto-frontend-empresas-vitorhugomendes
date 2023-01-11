@@ -1,4 +1,11 @@
-import { register } from "./requests.js";
+import { getUser, register } from "./requests.js";
+
+function renderRegister() {
+  const user = getUser();
+  if (user) {
+    window.location.replace("/");
+  }
+}
 
 function registerForm() {
   const inputs = document.querySelectorAll(".register__form >  input");
@@ -21,4 +28,5 @@ function registerForm() {
   });
 }
 
+renderRegister();
 registerForm();
