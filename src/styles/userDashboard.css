@@ -20,6 +20,8 @@
 .user-info__section>img {
     width: 26px;
     height: 26px;
+
+    cursor: pointer;
 }
 
 .user-info__container {
@@ -68,4 +70,70 @@
 
     text-align: center;
     color: var(--color-black);
+}
+
+.user__modal {
+    display: flex;
+    flex-direction: column;
+
+    width: 500px;
+
+    border: none;
+    background: var(--color-white);
+}
+
+.user__modal>img {
+    width: 17px;
+    height: 17px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.user__modal>form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    padding: 0 1.5rem 1.5rem;
+}
+
+.user__modal>form>h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 150%;
+
+    color: var(--color-black);
+}
+
+.user__modal>form>input {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+
+    padding: 0.6rem;
+
+    background-color: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.user__modal>form>input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.user__modal>form>button {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 150%;
+    text-align: center;
+
+    padding: 0.5rem;
+
+    color: var(--color-white);
+    background-color: var(--color-brand-1);
+    border: none;
+}
+
+.hidden {
+    display: none;
 }

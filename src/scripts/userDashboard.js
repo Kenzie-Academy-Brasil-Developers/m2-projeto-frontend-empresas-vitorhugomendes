@@ -1,4 +1,9 @@
-import { getUser, checkUserAdm, userInformations } from "./requests.js";
+import {
+  getUser,
+  checkUserAdm,
+  userInformations,
+  userUpdateUserInformation,
+} from "./requests.js";
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -45,29 +50,42 @@ async function renderUserInformations() {
   );
 }
 
-async function renderCompanyInformations() {
-  const userInfo = await userInformations();
-}
-
-async function editUserModal() {
-  const main = document.querySelector(".main__container");
-  const userEditModal = document.querySelector(".user-edit-info__modal");
+async function userModal() {
+  const userEditModal = document.querySelector(".user__modal");
   const editButton = document.querySelector(".user-button--edit");
   const closeModalButton = document.querySelector(".button-modal--close");
 
   editButton.addEventListener("click", (e) => {
     e.preventDefault();
+    userEditModal.classList.remove("hidden");
     userEditModal.showModal();
   });
 
   closeModalButton.addEventListener("click", () => {
+    userEditModal.classList.add("hidden");
     userEditModal.close();
   });
 }
 
-async function editInformation() {}
+async function editInformation() {
+  const editButton = document.querySelector(".button-modal--edit");
+  const inputs = document.querySelectorAll(".user__modal > form > input");
+
+  const editUser = {};
+
+  editButton.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    inputs.forEach((input) => {
+      editUser[input.name] = input.value;
+    });
+
+    console.log(editUser);
+    await userUpdateUserInformation(editUser);
+  });
+}
 
 renderUserDashboard();
 renderUserInformations();
-renderCompanyInformations();
-editUserModal();
+userModal();
+editInformation();

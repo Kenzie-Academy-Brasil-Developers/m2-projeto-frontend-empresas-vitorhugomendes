@@ -20,10 +20,11 @@ body {
     max-width: 1440px;
 }
 
-select, button{
+select,
+button {
     cursor: pointer;
 }
 
-.hidden {
+/* .hidden {
     display: none;
-}
+} */

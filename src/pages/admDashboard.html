@@ -43,6 +43,67 @@
         <button class="header-button--home">Logout</button>
       </section>
     </header>
-    <h1>adm</h1>
+    <main class="main__container">
+      <section class="companys__section">
+        <div class="companys__menu">
+          <h2>Departamentos</h2>
+          <select name="companys" id="companys">
+            <option value="">Selecionar Empresa</option>
+          </select>
+
+          <button>
+            <img src="../img/+-icon.png" alt="" />
+            Criar
+          </button>
+        </div>
+        <ul class="departments__list">
+          <li class="department__card">
+            <h2>Department Name</h2>
+            <h3>Department Description</h3>
+            <p>Company name</p>
+            <div class="departments-buttons__container">
+              <img
+                class="department-button--view"
+                src="../img/eye-icon-purple.png"
+                alt=""
+              />
+              <img
+                class="department-button--edit"
+                src="../img/pen-icon.png"
+                alt=""
+              />
+              <img
+                class="department-button--delete"
+                src="../img/trash-icon.png"
+                alt=""
+              />
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="users__section">
+        <h2>Usuários Cadastrados</h2>
+        <ul class="users__list">
+          <li class="user__card">
+            <h2>Username</h2>
+            <h3>nivel profissional</h3>
+            <p>nome da empresa</p>
+            <div class="users-buttons__container">
+              <img
+                class="user-button-edit"
+                src="../img/pen-icon-purple.png"
+                alt=""
+              />
+              <img
+                class="user-button-delete"
+                src="../img/trash-icon.png"
+                alt=""
+              />
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
   </body>
 </html>

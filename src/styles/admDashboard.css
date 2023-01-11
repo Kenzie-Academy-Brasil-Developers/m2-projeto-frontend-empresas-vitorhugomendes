@@ -1,0 +1,122 @@
+.main__container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.companys__section,
+.users__section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.companys__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.companys__menu>h2,
+.users__section>h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 150%;
+    text-align: center;
+    color: var(--color-black);
+}
+
+.companys__menu>select {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+
+    padding: 0 1.5rem;
+
+    border: 1px solid var(--color-black);
+    border-radius: 15px;
+}
+
+.companys__menu>select>option {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+
+    color: var(--color-black);
+}
+
+.companys__menu>button {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 150%;
+
+    padding: 0 2rem;
+    height: 40px;
+
+    color: var(--color-white);
+    background: var(--color-brand-1);
+    border: none;
+}
+
+.companys__menu>button>img {
+    position: relative;
+    right: 1.3rem;
+
+    width: 18px;
+    height: 18px;
+}
+
+.departments__list,
+.users__list {
+    display: flex;
+    padding: 2rem;
+
+    background: #F8F8F8;
+}
+
+.department__card,
+.user__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1rem;
+    width: 40%;
+
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-brand-1)
+}
+
+.department__card>h2,
+.user__card>h2 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 150%;
+
+    color: var(--color-black);
+}
+
+.department__card>h3,
+.department__card>p,
+.user__card>h3,
+.user__card>p {
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 150%;
+
+    color: var(--color-black);
+}
+
+.departments-buttons__container,
+.users-buttons__container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    cursor: pointer;
+}

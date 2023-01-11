@@ -124,5 +124,14 @@ export async function userUpdateUserInformation(data) {
     return response.json();
   });
 
+  if (newUserInformation.error) {
+    toast(newUserInformation.error, red);
+  } else {
+    toast("Informações atualizadas com sucesso!", green);
+    setTimeout(() => {
+      window.location.replace("./userDashboard.html");
+    }, 1000);
+  }
+
   return newUserInformation;
 }
