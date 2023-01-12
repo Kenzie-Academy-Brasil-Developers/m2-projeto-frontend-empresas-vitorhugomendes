@@ -32,8 +32,9 @@ async function renderUserInformations() {
 
   if (!kind_of_work) {
     kind_of_work = "";
+  } else {
+    kind_of_work = capitalizeFirstLetter(kind_of_work);
   }
-
   userInfoContainer.innerHTML = "";
   userInfoContainer.insertAdjacentHTML(
     "beforeend",
@@ -75,7 +76,6 @@ async function editInformation() {
       editUser[input.name] = input.value;
     });
 
-    console.log(editUser);
     await userUpdateUserInformation(editUser);
   });
 }

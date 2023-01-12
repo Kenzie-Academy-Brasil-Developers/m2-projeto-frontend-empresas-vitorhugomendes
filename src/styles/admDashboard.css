@@ -40,7 +40,7 @@ img {
 
     padding: 0 1.5rem;
 
-    border: 1px solid var(--color-black);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 15px;
 }
 
@@ -86,6 +86,7 @@ img {
     background: #F8F8F8;
 }
 
+
 .departments__list>h2 {
     font-weight: 700;
     font-size: 1.2rem;
@@ -104,13 +105,14 @@ img {
     padding: 1rem;
     margin-bottom: 1.5rem;
 
-
     background-color: var(--color-white);
     border-bottom: 1px solid var(--color-brand-1)
 }
 
 .department__card>h2,
-.user__card>h2 {
+.user__card>h2,
+.view-department--info>h2,
+.department-user__card>h2 {
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 150%;
@@ -121,7 +123,10 @@ img {
 .department__card>h3,
 .department__card>p,
 .user__card>h3,
-.user__card>p {
+.user__card>p,
+.view-department--info>p,
+.department-user__card>h3,
+.department-user__card>p {
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 150%;
@@ -134,4 +139,242 @@ img {
     display: flex;
     justify-content: center;
     gap: 1rem;
+}
+
+.view-department__modal {
+    width: 800px;
+
+    padding: 1rem 1.5rem;
+    border: none;
+    background: var(--color-white);
+}
+
+.edit-department__modal,
+.remove-department__modal,
+.new-department__modal,
+.edit-user__modal,
+.remove-user__modal {
+    width: 500px;
+
+    padding: 1rem 1.5rem;
+    border: none;
+    background: var(--color-white);
+}
+
+.view-department__modal>img,
+.edit-department__modal>img,
+.remove-department__modal>img,
+.new-department__modal>img,
+.edit-user__modal>img,
+.remove-user__modal>img {
+    position: relative;
+    left: 98%;
+    width: 17px;
+    height: 17px;
+}
+
+.view-department__form,
+.edit-department__form,
+.new-department__form,
+.edit-user__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+
+.remove-department__form,
+.remove-user__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 3rem;
+}
+
+.view-department__form>h2,
+.edit-department__form>h2,
+.new-department__form>h2,
+.edit-user__form>h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+
+    margin-bottom: 1rem;
+
+    color: var(--color-black);
+}
+
+.remove-department__form>h2,
+.remove-user__form>h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+
+    margin-bottom: 1rem;
+
+    color: var(--color-black);
+}
+
+.edit-department__form>textarea {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+
+    padding: 1rem;
+
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.edit-department__form>textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.new-department__form>input {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+
+    padding: 1rem;
+
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.new-department__form>select,
+.edit-user__form>select {
+    padding: 1rem;
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.edit-department__form>button,
+.new-department__form>button,
+.edit-user__form>button {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 150%;
+    text-align: center;
+
+    padding: 0.5rem;
+
+    color: var(--color-brand-1);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-brand-1)
+}
+
+.edit-department__form>button:hover,
+.new-department__form>button:hover,
+.edit-user__form>button:hover {
+    color: var(--color-white);
+    background-color: var(--color-brand-1);
+    border: 1px solid transparent;
+}
+
+.view-department__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.view-department--info,
+.view-department--function {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.department-user__card>div {
+    align-self: center;
+}
+
+.view-department--function>select {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+
+    width: 422px;
+
+    padding: 1rem;
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.department-users__list {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+
+    overflow-x: scroll;
+    background: #F8F8F8;
+}
+
+.department-user__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    min-width: 300px;
+    padding: 1rem;
+
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-brand-1)
+}
+
+.button--hire {
+    align-self: flex-end;
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    padding: 1rem;
+    width: 150px;
+
+    color: var(--color-green);
+    background: var(--color-white);
+    border: 1px solid var(--color-green);
+}
+
+
+.button--hire:hover {
+    color: var(--color-white);
+    background: var(--color-green);
+    border: 1px solid transparent;
+}
+
+.remove-department__form>button,
+.remove-user__form>button {
+    font-weight: 700;
+    font-size: 1rem;
+
+    padding: 1rem;
+
+    color: var(--color-green);
+    background: var(--color-white);
+    border: 1px solid var(--color-green);
+}
+
+.remove-department__form>button:hover,
+.remove-user__form>button:hover {
+    color: var(--color-white);
+    background: var(--color-green);
+    border: 1px solid transparent;
+}
+
+.button--dismiss {
+    font-weight: 700;
+    font-size: 1rem;
+
+    padding: 1rem;
+    width: 150px;
+
+    color: var(--color-red);
+    background: var(--color-white);
+    border: 1px solid var(--color-red);
+}
+
+.button--dismiss:hover {
+    color: var(--color-white);
+    background: var(--color-red);
+    border: 1px solid transparent;
 }

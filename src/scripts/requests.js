@@ -175,3 +175,132 @@ export async function readAllusers() {
 
   return users;
 }
+
+export async function readUsersOutOfWork() {
+  const usersOutOfWork = await fetch(`${baseUrl}/admin/out_of_work`, {
+    method: "GET",
+    headers: requestHeaders,
+  }).then((response) => {
+    return response.json();
+  });
+
+  return usersOutOfWork;
+}
+
+export async function hireUser(data) {
+  const hireUser = await fetch(`${baseUrl}/departments/hire`, {
+    method: "PATCH",
+    headers: requestHeaders,
+    body: JSON.stringify(data),
+  }).then((response) => {
+    return response.json();
+  });
+
+  if (hireUser.error) {
+    toast(hireUser.error, red);
+  } else {
+    toast("Usuário contratado!", green);
+  }
+
+  return hireUser;
+}
+
+export async function dismissUser(data) {
+  const dismissUser = await fetch(`${baseUrl}/departments/dismiss/${data}`, {
+    method: "PATCH",
+    headers: requestHeaders,
+  }).then((response) => {
+    return response.json();
+  });
+
+  if (dismissUser.error) {
+    toast(dismissUser.error, red);
+  } else {
+    toast("Usuário removido do departamento", green);
+  }
+
+  return dismissUser;
+}
+
+export async function editDepartment(data, departmentID) {
+  const editDepartment = await fetch(`${baseUrl}/departments/${departmentID}`, {
+    method: "PATCH",
+    headers: requestHeaders,
+    body: JSON.stringify(data),
+  }).then((response) => {
+    return response.json();
+  });
+
+  if (editDepartment.error) {
+    toast(editDepartment.error, red);
+  } else {
+    toast("Descrição alterada com sucesso!", green);
+    window.location.replace("./admDashboard.html");
+  }
+  return editDepartment;
+}
+
+export async function removeDepartment(departmentID) {
+  const removeDepartment = await fetch(
+    `${baseUrl}/departments/${departmentID}`,
+    {
+      method: "DELETE",
+      headers: requestHeaders,
+    }
+  );
+  if (removeDepartment.error) {
+    toast(removeDepartment.error, red);
+  } else {
+    toast("Departamento removido", green);
+    window.location.replace("./admDashboard.html");
+  }
+}
+
+export async function createNewDepartment(data) {
+  const newDepartment = await fetch(`${baseUrl}/departments`, {
+    method: "POST",
+    headers: requestHeaders,
+    body: JSON.stringify(data),
+  }).then((response) => {
+    return response.json();
+  });
+
+  if (newDepartment.error) {
+    toast(newDepartment.error, red);
+  } else {
+    toast("Descrição alterada com sucesso!", green);
+    window.location.replace("./admDashboard.html");
+  }
+  return newDepartment;
+}
+
+export async function editUser(data, userID) {
+  const newUserInfo = await fetch(`${baseUrl}/admin/update_user/${userID}`, {
+    method: "PATCH",
+    headers: requestHeaders,
+    body: JSON.stringify(data),
+  }).then((response) => {
+    return response.json();
+  });
+
+  if (newUserInfo.error) {
+    toast(newUserInfo.error, red);
+  } else {
+    toast("Descrição alterada com sucesso!", green);
+    window.location.replace("./admDashboard.html");
+  }
+  return newUserInfo;
+}
+
+export async function removeUser(userID) {
+  const removeUser = await fetch(`${baseUrl}/admin/delete_user/${userID}`, {
+    method: "DELETE",
+    headers: requestHeaders,
+  });
+  if (removeUser.error) {
+    toast(removeUser.error, red);
+  } else {
+    toast("Departamento removido", green);
+    window.location.replace("./admDashboard.html");
+  }
+}

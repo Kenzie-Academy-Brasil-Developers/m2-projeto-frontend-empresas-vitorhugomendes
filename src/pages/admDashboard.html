@@ -51,7 +51,7 @@
             <option value="">Selecionar Empresa</option>
           </select>
 
-          <button>
+          <button class="department-button--new">
             <img src="../img/+-icon.png" alt="" />
             Criar
           </button>
@@ -106,29 +106,17 @@
       </section>
     </main>
 
-    <dialog class="view-department__modal">
-      <img class="view-department-modal--close" src="../img/x-icon.png" alt="" />
-      <form method="dialog">
-        <h2>nome do departamento</h2>
-        <div>
-          <h3>descrição do departamento</h3>
-          <p>Empresa pertencente</p>
-        </div>
-        <div>
-          <select name="worker" id="worker"></select>
-          <button class="button-modal--edit">Contratar</button>
-        </div>
-        <ul>
-          <li>
-            <h2>username</h2>
-            <h3>pleno</h3>
-            <p>empresa</p>
-            <div>
-              <button>Desligar</button>
-            </div>
-          </li>
-        </ul>
-      </form>
+    <dialog class="view-department__modal"></dialog>
+
+    <dialog class="edit-department__modal"></dialog>
+
+    <dialog class="remove-department__modal"></dialog>
+
+    <dialog class="new-department__modal"></dialog>
+
+    <dialog class="edit-user__modal">
     </dialog>
+
+    <dialog class="remove-user__modal"></dialog>
   </body>
 </html>
