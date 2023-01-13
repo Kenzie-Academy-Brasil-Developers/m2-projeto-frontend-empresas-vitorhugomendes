@@ -4,6 +4,8 @@ import {
   checkUserAdm,
   userInformations,
   userUpdateUserInformation,
+  loggedUserDepartments,
+  userCoworkers,
 } from "./requests.js";
 
 async function renderUserDashboard() {
@@ -35,6 +37,7 @@ async function renderUserInformations() {
   } else {
     kind_of_work = capitalizeFirstLetter(kind_of_work);
   }
+
   userInfoContainer.innerHTML = "";
   userInfoContainer.insertAdjacentHTML(
     "beforeend",
@@ -46,6 +49,10 @@ async function renderUserInformations() {
   </div>
   `
   );
+
+  if (userInfo.department_uuid) {
+    renderUserCompany();
+  }
 }
 
 async function userModal() {
@@ -77,6 +84,44 @@ async function editInformation() {
     });
 
     await userUpdateUserInformation(editUser);
+  });
+}
+
+async function renderUserCompany() {
+  const companySection = document.querySelector(".company-info-empty__section");
+  companySection.classList = "company-info__section";
+
+  const userDepartment = await loggedUserDepartments();
+
+  companySection.innerHTML = ` 
+<div class="company-info-title__container">
+  <h2>${userDepartment.name} - ${userDepartment.departments[0].name}</h2>
+</div>
+<ul class="coworkers__list">
+</ul>`;
+  renderUserCoworkers();
+}
+
+async function renderUserCoworkers() {
+  const coworkersList = document.querySelector(".coworkers__list");
+
+  const coworkers = await userCoworkers();
+
+  const userTitle = document.querySelector(".user-info__container > h2");
+
+  const username = userTitle.innerText;
+
+  coworkers.forEach((coworker) => {
+    if (coworker.username != username) {
+      coworkersList.insertAdjacentHTML(
+        "afterbegin",
+        `          
+  <li class="coworker__card">
+    <h2>${coworker.username}</h2>
+    <h3>${capitalizeFirstLetter(coworker.professional_level)}</h3>
+  </li>`
+      );
+    }
   });
 }
 

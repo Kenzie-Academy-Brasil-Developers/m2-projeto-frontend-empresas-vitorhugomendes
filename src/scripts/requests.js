@@ -140,6 +140,28 @@ export async function userUpdateUserInformation(data) {
   return newUserInformation;
 }
 
+export async function loggedUserDepartments(){
+  const userDepartments = await fetch(`${baseUrl}/users/departments`, {
+    method: "GET",
+    headers: requestHeaders,
+  }).then((response) => {
+    return response.json();
+  });
+
+  return userDepartments
+}
+
+export async function userCoworkers(){
+  const userCoworkers = await fetch(`${baseUrl}/users/departments/coworkers`, {
+    method: "GET",
+    headers: requestHeaders,
+  }).then((response) => {
+    return response.json();
+  });
+
+  return userCoworkers[0].users;
+}
+
 export async function readAllDepartments() {
   const departments = await fetch(`${baseUrl}/departments`, {
     method: "GET",
