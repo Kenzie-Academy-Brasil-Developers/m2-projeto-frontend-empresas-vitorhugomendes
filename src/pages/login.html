@@ -42,8 +42,8 @@
       <section class="header-buttons__container">
         <div>
           <button class="header-button--home">Home</button>
-        <button class="header-button--register">Cadastro</button>
-      </div>
+          <button class="header-button--register">Cadastro</button>
+        </div>
       </section>
     </header>
     <main class="main__container">
@@ -51,8 +51,13 @@
         <h2>Login</h2>
         <h3>Preencha os campos para realizar login</h3>
         <form class="login__form">
-          <input type="email" name="email" placeholder="Seu e-mail" />
-          <input type="password" name="password" placeholder="Sua senha" />
+          <input type="email" name="email" placeholder="Seu e-mail" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Sua senha"
+            required
+          />
           <button class="login-button--login">Login</button>
           <p>ou</p>
           <button class="login-button--register">Cadastre-se</button>

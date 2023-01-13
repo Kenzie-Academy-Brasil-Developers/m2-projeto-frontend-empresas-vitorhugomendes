@@ -76,7 +76,7 @@ option[value=""] {
     margin-bottom: 1rem;
 }
 
-@media(min-width: 430px) {
+@media(min-width: 500px) {
     .register__section {
         margin-top: 8rem;
         padding: 1rem 2rem;

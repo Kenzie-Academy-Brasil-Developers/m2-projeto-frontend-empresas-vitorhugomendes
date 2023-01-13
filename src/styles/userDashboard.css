@@ -210,7 +210,7 @@
     border: 1px solid transparent;
 }
 
-@media(min-width: 430px) {
+@media(min-width: 500px) {
     .user-info__container>div {
         flex-direction: row
     }

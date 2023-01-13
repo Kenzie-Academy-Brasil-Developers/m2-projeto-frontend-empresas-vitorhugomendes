@@ -15,7 +15,6 @@ function loginForm() {
 
   button.addEventListener("click", async (event) => {
     event.preventDefault();
-
     inputs.forEach((input) => {
       loginUser[input.name] = input.value;
     });
@@ -26,5 +25,5 @@ function loginForm() {
   });
 }
 
-renderLogin()
+renderLogin();
 loginForm();

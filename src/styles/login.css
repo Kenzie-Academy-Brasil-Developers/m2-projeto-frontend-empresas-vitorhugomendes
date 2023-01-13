@@ -89,7 +89,7 @@
     text-align: center;
 }
 
-@media(min-width: 430px) {
+@media(min-width: 500px) {
     .login__section {
         margin-top: 8rem;
         padding: 1rem 2rem;

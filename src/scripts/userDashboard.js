@@ -10,7 +10,10 @@ import {
 
 async function renderUserDashboard() {
   const user = getUser();
-  if (!user) {
+  if (user.error) {
+    localStorage.removeItem("@kenzieEmpresas:user");
+    window.location.replace("/");
+  } else if (!user) {
     window.location.replace("/");
   } else if (await checkUserAdm()) {
     window.location.replace("./admDashboard.html");

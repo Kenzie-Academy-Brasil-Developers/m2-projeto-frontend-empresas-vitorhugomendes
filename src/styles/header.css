@@ -51,7 +51,8 @@
     top: 15px;
     width: 100vw;
     padding-bottom: 1rem;
-    background-color: var(--color-white)
+    background-color: var(--color-white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .header-buttons__container>div>button {
@@ -78,10 +79,11 @@
     display: none;
 }
 
-@media(min-width: 430px) {
+@media(min-width: 500px) {
     .header__container {
         flex-direction: row;
         justify-content: space-between;
+        gap: 1rem;
     }
 
     .menu--dropdown {
@@ -90,19 +92,28 @@
 
     .header-buttons__container {
         display: flex;
-        align-self: flex-end;
+
         gap: 1rem;
 
         width: fit-content;
     }
 
     .header-buttons__container>div {
-        display: block;
+        display: flex;
         top: 0;
-        width: fit-content;
-        position: inherit;
+        justify-content: flex-start;
 
+        width: auto;
+
+        position: inherit;
         padding-bottom: 0;
+
+        box-shadow: none;
+    }
+
+    .header-buttons__container>div>button {
+        width: fit-content;
+        padding: 0.5rem 2rem;
     }
 
     .header-title__container>img {
