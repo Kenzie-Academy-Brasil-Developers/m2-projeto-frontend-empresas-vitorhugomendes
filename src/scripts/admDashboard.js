@@ -101,10 +101,11 @@ function renderUsersList(users) {
   });
 }
 
-function createUserCard({ username, professional_level, uuid }) {
+function createUserCard({ username, professional_level, uuid, kind_of_work }) {
   const userCard = document.createElement("li");
   const usernameCard = document.createElement("h2");
   const userProfessionalLevel = document.createElement("h3");
+  const userKindOfWorkd = document.createElement("p");
   const buttonsDiv = document.createElement("div");
   const buttonEdit = document.createElement("img");
   const buttonDelete = document.createElement("img");
@@ -130,9 +131,19 @@ function createUserCard({ username, professional_level, uuid }) {
     userProfessionalLevel.innerText = capitalizeFirstLetter(professional_level);
   }
 
+  if (!kind_of_work) {
+    userKindOfWorkd.innerText = "Indefinido";
+  } else {
+    userKindOfWorkd.innerText = capitalizeFirstLetter(kind_of_work);
+  }
   buttonsDiv.append(buttonEdit, buttonDelete);
 
-  userCard.append(usernameCard, userProfessionalLevel, buttonsDiv);
+  userCard.append(
+    usernameCard,
+    userProfessionalLevel,
+    userKindOfWorkd,
+    buttonsDiv
+  );
 
   return userCard;
 }
