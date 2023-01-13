@@ -9,7 +9,7 @@ function showHideButtons() {
 
 function pageRedirectButtons() {
   const buttons = document.querySelectorAll(
-    ".header-buttons__container > button"
+    ".header-buttons__container > div> button"
   );
 
   buttons.forEach((button) => {

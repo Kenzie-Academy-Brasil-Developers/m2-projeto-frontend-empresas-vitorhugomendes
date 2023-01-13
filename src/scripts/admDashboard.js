@@ -211,7 +211,6 @@ function viewDepartmentModal() {
       renderDepartmentsUsers(department.id, department.company);
       renderUsersOutofWorkOptions(await readUsersOutOfWork());
       hireUserButton();
-      dismissUserButton();
 
       viewDepartmentModal.showModal();
     });
@@ -293,7 +292,10 @@ async function renderDepartmentsUsers(department, company) {
         `
       );
     });
-  } else if (departmentUsers.length == 0) {
+  }
+  dismissUserButton();
+
+  if (departmentUsers.length == 0) {
     departmentUsersList.insertAdjacentHTML(
       "beforeend",
       `

@@ -20,9 +20,11 @@ img {
 
 .companys__menu {
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
+    flex-direction: column;
     align-items: center;
 }
+
 
 .companys__menu>h2,
 .users__section>h2 {
@@ -82,6 +84,7 @@ img {
     justify-content: space-between;
     padding: 2rem;
 
+    max-height: 50vh;
     overflow-y: scroll;
     background: #F8F8F8;
 }
@@ -377,4 +380,23 @@ img {
     color: var(--color-white);
     background: var(--color-red);
     border: 1px solid transparent;
+}
+
+.departments__list::-webkit-scrollbar, .users__list::-webkit-scrollbar{
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F8F8F8
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-brand-1)
+}
+
+@media(min-width: 430px) {
+    .companys__menu {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
